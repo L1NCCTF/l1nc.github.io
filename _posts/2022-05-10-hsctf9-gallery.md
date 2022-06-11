@@ -6,4 +6,4 @@ mathjax: true
 date: 2022-05-10
 ---
 
-*A simple web challenge involving directory traversal and determining how to bypass the constraints.*
+*A simple web challenge involving directory traversal.*
