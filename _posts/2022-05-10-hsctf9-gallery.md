@@ -61,8 +61,10 @@ So according to these checks it had to be a .jpg and had to be relative to the d
 
 Now I needed a way to bypass the .jpg check, at first I tried ideas like
 > ../flag.txt.jpg
+
 with a null character in between .txt and .jpg, but that clearly didn't work. Until I looked back at the source code and it hit me, the .jpg didnt have to be at the end of the file, all it needed was to be inside the request parameter, so I crafted
 > ../.jpg/../flag.txt
+
 and voilà, I have the flag.
 
 <img src="/resources/2022/hsctf9/gallery/gallery_flag.png" width="600">
