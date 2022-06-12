@@ -23,7 +23,7 @@ date: 2022-05-10
 
 ### Solution
 
-I believed it was a steganography challenge at first, so I wgetted all of the images on the site and then ran exiftool, but I came back with absolutely nothing. Until on closer inspection at the gallery page, I noticed that the image url had `/image?image=` and I immediately knew it could be exploited as a path traversal attack due to the images being embedded through the `image` parameter instead of directly embedding the file (which is more secure than that lol).
+I believed it was a steganography challenge at first, so I wgetted all of the images on the site and then ran exiftool, but I came back with absolutely nothing. Until on closer inspection at the gallery page, I noticed that the image url had ```/image?image=``` and I immediately knew it could be exploited as a path traversal attack due to the images being embedded through the ``image`` parameter instead of directly embedding the file (which is more secure than that lol).
 
 I looked at the [source code](https://hsctf-9-resources.storage.googleapis.com/uploads/f6fb4242f208ee8229bac9fb310223ea685530b2d72582eec086a1988acdf26a/gallery.zip) and noticed this route
 
@@ -56,8 +56,8 @@ def image():
 		return "File does not exist", 400
 ```
 
-So according to these checks it had to be a .jpg and had to be relative to the directory where the images are located. After seeing the directory relativity check I knew that it could be bypassed with a `../` and so that became apart of my payload as `../flag.txt`.
+So according to these checks it had to be a .jpg and had to be relative to the directory where the images are located. After seeing the directory relativity check I knew that it could be bypassed with a ```../``` and so that became apart of my payload as ```../flag.txt```.
 
-Now I needed a way to bypass the .jpg check, at first I tried ideas like `../flag.txt.jpg` with a null character in between .txt and .jpg, but that clearly didn't work. Until I looked back at the source code and it hit me, the .jpg didnt have to be at the end of the file, all it needed was to be inside the request parameter, so I crafted `../.jpg/../flag.txt` and voilà, I have the flag.
+Now I needed a way to bypass the .jpg check, at first I tried ideas like ```../flag.txt.jpg``` with a null character in between .txt and .jpg, but that clearly didn't work. Until I looked back at the source code and it hit me, the .jpg didnt have to be at the end of the file, all it needed was to be inside the request parameter, so I crafted ``../.jpg/../flag.txt`` and voilà, I have the flag.
 
 <img src="/resources/2022/hsctf9/gallery/gallery_flag.png" width="600">
