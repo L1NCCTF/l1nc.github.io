@@ -25,7 +25,7 @@ date: 2022-05-10
 
 I believed it was a steganography challenge at first, so I wgetted all of the images on the site and then ran exiftool, but I came back with absolutely nothing.
 
-Until on closer inspection at the gallery page, I noticed that the image url had > /image?image= and I immediately knew it could be exploited as a path traversal attack due to the images being embedded through the image parameter instead of directly embedding the file (which is more secure than that lol).
+Until on closer inspection at the gallery page, I noticed that the image url had /image?image= and I immediately knew it could be exploited as a path traversal attack due to the images being embedded through the image parameter instead of directly embedding the file (which is more secure than that lol).
 
 I looked at the [source code](https://hsctf-9-resources.storage.googleapis.com/uploads/f6fb4242f208ee8229bac9fb310223ea685530b2d72582eec086a1988acdf26a/gallery.zip) and noticed this route
 
