@@ -53,6 +53,6 @@ def image():
 
 Okay, so according to these checks it had to be a .jpg and had to be relative to the directory where the images are located. After seeing the directory relativity check I knew that it could be bypassed with a `../` and so that became apart of my payload as `../flag.txt`.
 
-Now I needed a way to bypass the .jpg check, at first I tried ideas like `../flag.txt.jpg` with a null character in between .txt and .jpg, but that clearly didn't work. Until I looked back at the source code and it hit me, the .jpg didnt have to be at the end of the file, all it needed was to be inside the request parameter, so I crafted `../.jpg/../flag.txt` and the flag popped up.
+Now I needed a way to bypass the .jpg check, at first I tried ideas like `../flag.txt.jpg` with a null character in between .txt and .jpg, but that clearly didn't work. Until I looked back at the source code and it hit me, the .jpg didnt have to be at the end of the file, all it needed was to be inside the request parameter, so I crafted `../.jpg/../flag.txt` and voilà, I have the flag.
 
-<img src="/resources/2022/hsctf9/gallery/gallery_flag.png" width="400">
+<img src="/resources/2022/hsctf9/gallery/gallery_flag.png" width="600">
