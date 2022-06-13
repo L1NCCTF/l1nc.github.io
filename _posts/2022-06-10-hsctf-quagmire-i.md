@@ -13,10 +13,14 @@ date: 2022-06-13
 ### Description
 >Bob was on his way to school and go to Mr. Connolly’s first period AP CSA class, but it was a rainy day and he got stuck in the quagmire in his town, making him late to school (specifically the first closest to his home, there are apparently four quagmires in his town)! Could you figure out what Mr. Connolly told Bob’s class? His classmate Alice sent this text message after class (written in Quagmire I):
 >
->``` Plaintext keyword: CONNOLLYROCKS
+>Plaintext keyword: CONNOLLYROCKS
+>
 >Indicator keyword: HSCTF
+>
 >Indicator position: A
->Ciphertext: LZXORNZBUYWNRARNOVGCLSQWJEFJFE```
+>
+>Ciphertext: LZXORNZBUYWNRARNOVGCLSQWJEFJFE
+>
 >(Please wrap the flag in the flag format “flag{}”, and use only uppercase letters within the braces.)
 
 ### Solution
